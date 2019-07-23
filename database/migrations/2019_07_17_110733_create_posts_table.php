@@ -17,10 +17,12 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('description');
-            $table->integer('author_id')->unsigned();// TODO: add key
+            $table->bigInteger('user_id')->unsigned();// TODO: add foreign key
             $table->dateTime('date_of_publication');
+            $table->string('post_image_file_name');
             $table->timestamps();
-        //пост должен содержать заголовок, описание, автор, дата публикации, изображение
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

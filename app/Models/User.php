@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -36,5 +36,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'birth_date' => 'date:m/d/Y'
     ];
+
+    protected $dates = [
+        'birth_date' => 'date:m-d-Y'
+    ];
+
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
 }
