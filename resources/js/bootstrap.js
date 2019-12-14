@@ -11,7 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -53,3 +54,44 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+
+ import Echo from "laravel-echo";
+//
+// window.io = require('socket.io-client');
+//
+// if (typeof io !== 'undefined') {
+//     window.Echo = new Echo({broadcaster: 'socket.io', host: window.location.hostname + ':6001',});
+// }
+//
+//
+// import Echo from 'laravel-echo'
+
+window.io = require('socket.io-client');
+window.Echo = new Echo({
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001'
+});
+// Echo.join(`chat.${roomId}`)
+// Echo.join(`chat.${roomId}`)
+// window.Echo.channel(`order.${post}`)
+ var post = 252;
+console.log(window.Echo);
+
+
+window.Echo.private(`order.${post}`)
+    .listen('NewBroadcastNotification', (e) => {
+        console.log(e);
+    });
+// Echo.private(`App.User.${userId}`)
+//     .notification((notification) => {
+//         console.log(notification.type);
+//     });
+
+
+
+//TODO:move to another place
+// window.Laravel = {!! json_encode([
+//     'user' => auth()->check() ? auth()->user()->id : null,
+// ]) !!};
+// use window.Laravel.user

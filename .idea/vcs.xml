@@ -2,6 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../NewOSPanel/OSPanel/domains/cpg.lc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../angular-application" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../eden-ledger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../frag" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../macula.lc" vcs="Git" />
   </component>
 </project>

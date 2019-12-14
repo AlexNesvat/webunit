@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../NewOSPanel/OSPanel/domains/cpg.lc/.idea/cpg.lc.iml" filepath="$PROJECT_DIR$/../../../NewOSPanel/OSPanel/domains/cpg.lc/.idea/cpg.lc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../eden-ledger/.idea/eden-ledger.iml" filepath="$PROJECT_DIR$/../eden-ledger/.idea/eden-ledger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../engineer-task/.idea/engineer-task.iml" filepath="$PROJECT_DIR$/../engineer-task/.idea/engineer-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../health-app/.idea/health-app.iml" filepath="$PROJECT_DIR$/../health-app/.idea/health-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/../macula.lc/.idea/upwork.iml" filepath="$PROJECT_DIR$/../macula.lc/.idea/upwork.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/web-unit-laravel.iml" filepath="$PROJECT_DIR$/.idea/web-unit-laravel.iml" />
     </modules>

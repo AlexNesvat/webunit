@@ -11,12 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+use App\Events\NewBroadcastNotification;
+use App\Models\Post;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/','HomeController@showBlog')->name('blog');
+Route::get('/publications/{user}','HomeController@showUserPublications')->name('publications');
+Route::post('/follow/{user}', 'UsersController@follow')->name('follow');
+Route::delete('/unfollow/{user}', 'UsersController@unfollow')->name('unfollow');
 
-Route::resource('post', 'PostController')->middleware('auth');
+Route::resource('/post', 'PostController')->middleware('auth');
+
+Route::prefix('/admin')->middleware('can:admin')->group(function (){
+    Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
+    Route::delete('/delete-user/{user}','AdminController@deleteUser');
+});
+
+
+Route::get('test', function (){
+    event(new NewBroadcastNotification(auth()->user(),Post::find(252)));
+
+});
+
+Route::get('my/{post}',function (Post $post){
+   return view('post.show')->with(['post' => $post]);
+});
+
+//Broadcast::routes();
